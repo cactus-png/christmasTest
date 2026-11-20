@@ -1,11 +1,10 @@
 
-/* ==========================================
-   CHRISTMAS GIFT SETTINGS
-========================================== */
+// ==========================================
+// PASSWORD SETTINGS
+// ==========================================
 
-// CHANGE THE PASSWORD HERE
+// Change the password here:
 const PASSWORD = "Christmas2026";
-
 
 // ==========================================
 // PAGE ELEMENTS
@@ -21,83 +20,47 @@ const passwordError = document.getElementById("passwordError");
 
 const previewTreeButton = document.getElementById("previewTreeButton");
 
+let treeLoaded = false;
 
 // ==========================================
-// PAGE TRANSITIONS
-// ==========================================
-
-function showPage(page) {
-
-    passwordPage.hidden = true;
-    connectionsPage.hidden = true;
-    treePage.hidden = true;
-
-    page.hidden = false;
-}
-
-
-// ==========================================
-// PAGE 1: PASSWORD CHECK
+// PASSWORD CHECK
 // ==========================================
 
 passwordForm.addEventListener("submit", function(event) {
-
     event.preventDefault();
 
-    const enteredPassword = passwordInput.value;
+    const enteredPassword = passwordInput.value.trim();
 
     if (enteredPassword === PASSWORD) {
-
         passwordError.textContent = "";
 
-        passwordInput.value = "";
-
-        showPage(connectionsPage);
-
+        passwordPage.hidden = true;
+        connectionsPage.hidden = false;
     } else {
-
-        passwordError.textContent =
-            "That's not quite right. Try again!";
-
+        passwordError.textContent = "Incorrect password. Try again.";
         passwordInput.value = "";
-
         passwordInput.focus();
-
     }
-
 });
 
-
 // ==========================================
-// PAGE 2: CONNECTIONS TO TREE
-// TEMPORARY UNTIL GAME IS CREATED
+// LOAD CHRISTMAS TREE
 // ==========================================
-
-let treeLoaded = false;
 
 previewTreeButton.addEventListener("click", async function() {
 
-    showPage(treePage);
-
-    // Load the original Christmas tree only once
-    if (!treeLoaded) {
-
-        try {
-
+    try {
+        if (!treeLoaded) {
             await import("./script.js");
-
             treeLoaded = true;
-
-        } catch (error) {
-
-            console.error("Could not load Christmas tree:", error);
-
-            alert("Something went wrong loading your Christmas tree.");
-
-            showPage(connectionsPage);
-
         }
 
+        connectionsPage.hidden = true;
+        treePage.hidden = false;
+
+    } catch (error) {
+        console.error("Could not load the Christmas tree:", error);
+        alert("There was a problem loading the Christmas tree. Check the browser console for details.");
     }
 
 });
