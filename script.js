@@ -52,7 +52,7 @@ document.getElementById('scene').appendChild(renderer.domElement);
 // LIGHTING
 // ==========================================
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+const ambientLight = new THREE.AmbientLight(0xefc070, 0.7);
 scene.add(ambientLight);
 
 const moonLight = new THREE.DirectionalLight(0x9bbcff, 2);
@@ -220,9 +220,9 @@ function buildTree() {
     // ======================================
 
 const ORNAMENT_COLORS = [
-    "#8B0000", "#B22222", "#DC143C", "#FF0000",
-    "#806000", "#A67C00", "#B8860B", "#D4AF37", "#FFD700",
-    "#004B23", "#006400", "#008000", "#228B22", "#50C878"
+    0x8B0000, 0xB22222, 0xDC143C, 0xFF0000,
+    0x806000, 0xA67C00, 0xB8860B", 0xD4AF37", 0xFFD700,
+    0x004B23, 0x006400, 0x008000, 0x228B22, 0x50C878
 ];
 
     const ornamentGeometry = new THREE.SphereGeometry(
