@@ -1,7 +1,7 @@
 
-/* ==========================================
-   GENERAL SETTINGS
-========================================== */
+/* ========================================== */
+/* GENERAL                                    */
+/* ========================================== */
 
 * {
     margin: 0;
@@ -28,29 +28,16 @@ body {
 }
 
 
-/* ==========================================
-   PASSWORD AND CONNECTIONS BACKGROUND
-========================================== */
+/* ========================================== */
+/* PASSWORD AND CONNECTIONS BACKGROUND       */
+/* ========================================== */
 
 #passwordPage,
 #connectionsPage {
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 20px;
-
-    background: #080d12;
-}
-
-
-/* ==========================================
-   AMBIENT BACKGROUND LIGHTING
-========================================== */
-
-#passwordPage,
-#connectionsPage {
     background:
         radial-gradient(
             ellipse at 50% 45%,
@@ -61,23 +48,18 @@ body {
 }
 
 
-/* ==========================================
-   FALLING SNOW
-========================================== */
+/* ========================================== */
+/* FALLING SNOW                               */
+/* ========================================== */
 
 #passwordPage::before,
 #connectionsPage::before {
-
     content: "";
-
     position: absolute;
-
     top: -100%;
     left: 0;
-
     width: 100%;
     height: 300%;
-
     pointer-events: none;
 
     background-image:
@@ -90,11 +72,8 @@ body {
         radial-gradient(2px 2px at 600px 140px, white, transparent);
 
     background-size: 650px 300px;
-
     opacity: 0.45;
-
     animation: snowfall 18s linear infinite;
-
     z-index: 1;
 }
 
@@ -111,213 +90,232 @@ body {
 }
 
 
-/* ==========================================
-   MAIN CONTENT
-========================================== */
+/* ========================================== */
+/* PASSWORD AND GAME CARDS                    */
+/* ========================================== */
 
 .gate-card,
 .game-card {
-
-    width: min(100%, 440px);
-
+    width: min(100%, 560px);
+    max-height: 95vh;
+    overflow-y: auto;
     padding: 35px;
-
     text-align: center;
-
     position: relative;
     z-index: 2;
 
     background: rgba(8, 13, 18, 0.5);
-
-    border: 5px solid rgba(180, 190, 200, 0.2);
-
+    border: 1px solid rgba(180, 190, 200, 0.2);
     border-radius: 5px;
-
 }
 
-
-/* ==========================================
-   HEADINGS
-========================================== */
+.gate-card {
+    max-width: 440px;
+}
 
 h1 {
-
     color: #f5d77b;
-
     font-family: "Times New Roman", serif;
-
     font-size: 32px;
-
     font-weight: normal;
-
     margin-bottom: 25px;
-
 }
 
 
-/* ==========================================
-   PASSWORD INPUT
-========================================== */
+/* ========================================== */
+/* PASSWORD INPUT                             */
+/* ========================================== */
 
 input {
-
     width: 100%;
-
     padding: 14px;
 
     background: rgba(8, 13, 18, 0.8);
-
     border: 1px solid #53616b;
-
     border-radius: 3px;
 
     color: white;
-
     font-family: "Times New Roman", serif;
-
     font-size: 16px;
 
     outline: none;
-
     text-align: center;
-
     margin-bottom: 15px;
-
 }
 
 input:focus {
-
     border-color: #c9a84c;
-
 }
 
 input::placeholder {
-
     color: #89939b;
-
 }
 
 
-/* ==========================================
-   BUTTONS
-========================================== */
+/* ========================================== */
+/* BUTTONS                                    */
+/* ========================================== */
 
 button {
-
     width: 100%;
-
     padding: 13px;
 
     background: #17232b;
-
     color: #f5d77b;
 
     border: 1px solid #59636a;
-
     border-radius: 3px;
 
     font-family: "Times New Roman", serif;
-
     font-size: 16px;
 
     cursor: pointer;
-
     transition: background 0.2s;
-
 }
 
-button:hover {
-
+button:hover:not(:disabled) {
     background: #25333c;
+}
 
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
 
-/* ==========================================
-   PASSWORD ERROR
-========================================== */
+/* ========================================== */
+/* PASSWORD ERROR                             */
+/* ========================================== */
 
 .error {
-
     color: #d98b82;
-
     font-size: 14px;
-
     margin-top: 15px;
-
     min-height: 18px;
-
 }
 
 
-/* ==========================================
-   CONNECTIONS PLACEHOLDER
-========================================== */
+/* ========================================== */
+/* CONNECTIONS GAME                           */
+/* ========================================== */
 
-.puzzle-placeholder {
-
-    background: rgba(8, 13, 18, 0.65);
-
-    border: 1px solid rgba(180, 190, 200, 0.2);
-
-    border-radius: 5px;
-
-    padding: 25px 15px;
-
-    margin: 25px 0;
-
-}
-
-.puzzle-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 8px;
-
+.game-instructions {
+    color: #c5cbd0;
+    font-size: 15px;
     margin-bottom: 20px;
-
 }
 
-.puzzle-grid div {
 
-    background: #19252d;
+/* ========================================== */
+/* CONNECTIONS GRID                           */
+/* ========================================== */
 
-    border: 1px solid #394852;
-
-    border-radius: 3px;
-
-    padding: 15px 0;
-
-    font-size: 23px;
-
+.connections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 20px 0;
 }
 
-.puzzle-placeholder p {
+.connection-tile {
+    min-width: 0;
+    min-height: 75px;
+    padding: 8px 4px;
 
-    color: #e3c66f;
+    background: #26343d;
+    color: #f5e9c9;
 
-    font-size: 13px;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 10px;
-
-}
-
-.puzzle-placeholder span {
-
-    color: #89939b;
+    border: 1px solid #53616b;
+    border-radius: 4px;
 
     font-size: 14px;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
 
+.connection-tile:hover:not(:disabled) {
+    background: #354650;
+}
+
+.connection-tile.selected {
+    background: #f5e9c9;
+    color: #17232b;
+    border-color: #f5e9c9;
 }
 
 
-/* ==========================================
-   CHRISTMAS TREE PAGE
-========================================== */
+/* ========================================== */
+/* SOLVED CATEGORIES                          */
+/* ========================================== */
+
+.solved-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.solved-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 12px;
+    border-radius: 4px;
+
+    color: #17232b;
+}
+
+.solved-group strong {
+    font-size: 16px;
+}
+
+.solved-group span {
+    font-size: 13px;
+}
+
+
+/* ========================================== */
+/* GAME MESSAGES                              */
+/* ========================================== */
+
+.game-message {
+    min-height: 20px;
+    color: #c5cbd0;
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+.mistakes {
+    color: #c5cbd0;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+
+/* ========================================== */
+/* GAME CONTROLS                              */
+/* ========================================== */
+
+.game-controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.game-controls button {
+    flex: 1;
+    padding: 10px 5px;
+    font-size: 13px;
+}
+
+#restartButton {
+    margin-bottom: 12px;
+}
+
+
+/* ========================================== */
+/* CHRISTMAS TREE PAGE                        */
+/* ========================================== */
 
 #treePage {
     background: #080d12;
@@ -333,7 +331,6 @@ button:hover {
 }
 
 .message {
-
     position: absolute;
     bottom: 9%;
     width: 100%;
@@ -345,12 +342,10 @@ button:hover {
     letter-spacing: 7px;
 
     text-shadow: 0 0 15px rgba(255, 200, 80, 0.7);
-
     pointer-events: none;
 }
 
 .credit {
-
     position: absolute;
     bottom: 4%;
     width: 100%;
@@ -365,15 +360,33 @@ button:hover {
 }
 
 
-/* ==========================================
-   MOBILE ADJUSTMENTS
-========================================== */
+/* ========================================== */
+/* MOBILE                                     */
+/* ========================================== */
 
 @media (max-width: 500px) {
 
     .gate-card,
     .game-card {
         padding: 25px 20px;
+    }
+
+    .connections-grid {
+        gap: 5px;
+    }
+
+    .connection-tile {
+        min-height: 65px;
+        font-size: 12px;
+        padding: 5px 2px;
+    }
+
+    .game-controls {
+        gap: 5px;
+    }
+
+    .game-controls button {
+        font-size: 12px;
     }
 
     .message {
