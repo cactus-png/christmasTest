@@ -12,7 +12,7 @@
 body {
     overflow: hidden;
     background: #080d12;
-    font-family: Georgia, serif;
+    font-family: "Times New Roman", serif;
     color: #f5e9c9;
 }
 
@@ -41,42 +41,23 @@ body {
 
     padding: 20px;
 
-    background:
-        radial-gradient(
-            ellipse at 50% 45%,
-            rgba(31, 55, 72, 0.45) 0%,
-            transparent 55%
-        ),
-        radial-gradient(
-            ellipse at 50% 100%,
-            rgba(25, 45, 55, 0.25) 0%,
-            transparent 60%
-        ),
-        #080d12;
+    background: #080d12;
 }
 
 
 /* ==========================================
-   AMBIENT LIGHTING
+   AMBIENT BACKGROUND LIGHTING
 ========================================== */
 
-#passwordPage::after,
-#connectionsPage::after {
-
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
+#passwordPage,
+#connectionsPage {
     background:
         radial-gradient(
-            circle at 50% 40%,
-            rgba(255, 196, 91, 0.045),
-            transparent 55%
-        );
-
-    pointer-events: none;
-    z-index: 0;
+            ellipse at 50% 45%,
+            rgba(35, 48, 60, 0.2),
+            transparent 65%
+        ),
+        #080d12;
 }
 
 
@@ -139,89 +120,37 @@ body {
 
     width: min(100%, 440px);
 
-    padding: 45px 35px;
+    padding: 35px;
 
     text-align: center;
 
     position: relative;
     z-index: 2;
 
-    background: rgba(8, 13, 18, 0.35);
+    background: rgba(8, 13, 18, 0.5);
 
-    border: 1px solid rgba(212, 175, 55, 0.22);
+    border: 1px solid rgba(180, 190, 200, 0.2);
 
-    border-radius: 12px;
+    border-radius: 5px;
 
-    box-shadow:
-        0 0 35px rgba(0, 0, 0, 0.3),
-        0 0 35px rgba(212, 175, 55, 0.035);
 }
 
 
 /* ==========================================
-   HEADINGS AND TEXT
+   HEADINGS
 ========================================== */
-
-.christmas-icon {
-
-    font-size: 55px;
-
-    margin-bottom: 20px;
-
-    filter: drop-shadow(
-        0 0 12px rgba(255, 200, 80, 0.35)
-    );
-
-}
-
-.eyebrow {
-
-    color: #c9a84c;
-
-    font-size: 11px;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 18px;
-
-}
 
 h1 {
 
     color: #f5d77b;
 
-    font-size: clamp(27px, 5vw, 36px);
+    font-family: "Times New Roman", serif;
+
+    font-size: 32px;
 
     font-weight: normal;
 
-    margin-bottom: 18px;
-
-    text-shadow:
-        0 0 15px rgba(255, 200, 80, 0.25);
-
-}
-
-.description {
-
-    color: #aab6bd;
-
-    font-size: 15px;
-
-    line-height: 1.8;
-
-    margin-bottom: 30px;
-
-}
-
-.bottom-text {
-
-    color: #78858e;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-    margin-top: 30px;
+    margin-bottom: 25px;
 
 }
 
@@ -234,19 +163,19 @@ input {
 
     width: 100%;
 
-    padding: 15px;
+    padding: 14px;
 
     background: rgba(8, 13, 18, 0.8);
 
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid #53616b;
 
-    border-radius: 5px;
+    border-radius: 3px;
 
-    color: #f5e9c9;
+    color: white;
 
-    font-family: Georgia, serif;
+    font-family: "Times New Roman", serif;
 
-    font-size: 14px;
+    font-size: 16px;
 
     outline: none;
 
@@ -254,22 +183,17 @@ input {
 
     margin-bottom: 15px;
 
-    transition: all 0.3s;
-
 }
 
 input:focus {
 
-    border-color: #d4af37;
-
-    box-shadow:
-        0 0 12px rgba(212, 175, 55, 0.15);
+    border-color: #c9a84c;
 
 }
 
 input::placeholder {
 
-    color: #71808a;
+    color: #89939b;
 
 }
 
@@ -282,38 +206,29 @@ button {
 
     width: 100%;
 
-    padding: 15px;
+    padding: 13px;
 
-    background: rgba(20, 30, 35, 0.9);
+    background: #17232b;
 
     color: #f5d77b;
 
-    border: 1px solid rgba(212, 175, 55, 0.5);
+    border: 1px solid #59636a;
 
-    border-radius: 5px;
+    border-radius: 3px;
 
-    font-family: Georgia, serif;
+    font-family: "Times New Roman", serif;
 
-    font-size: 14px;
-
-    letter-spacing: 1px;
+    font-size: 16px;
 
     cursor: pointer;
 
-    transition: all 0.3s;
+    transition: background 0.2s;
 
 }
 
 button:hover {
 
-    background: rgba(212, 175, 55, 0.12);
-
-    border-color: #f5d77b;
-
-    box-shadow:
-        0 0 18px rgba(212, 175, 55, 0.15);
-
-    transform: translateY(-2px);
+    background: #25333c;
 
 }
 
@@ -326,7 +241,7 @@ button:hover {
 
     color: #d98b82;
 
-    font-size: 13px;
+    font-size: 14px;
 
     margin-top: 15px;
 
@@ -343,9 +258,9 @@ button:hover {
 
     background: rgba(8, 13, 18, 0.65);
 
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(180, 190, 200, 0.2);
 
-    border-radius: 8px;
+    border-radius: 5px;
 
     padding: 25px 15px;
 
@@ -367,11 +282,11 @@ button:hover {
 
 .puzzle-grid div {
 
-    background: rgba(25, 40, 45, 0.8);
+    background: #19252d;
 
-    border: 1px solid rgba(212, 175, 55, 0.18);
+    border: 1px solid #394852;
 
-    border-radius: 5px;
+    border-radius: 3px;
 
     padding: 15px 0;
 
@@ -383,9 +298,9 @@ button:hover {
 
     color: #e3c66f;
 
-    font-size: 12px;
+    font-size: 13px;
 
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 
     margin-bottom: 10px;
 
@@ -395,77 +310,58 @@ button:hover {
 
     color: #89939b;
 
-    font-size: 13px;
+    font-size: 14px;
 
 }
 
 
 /* ==========================================
    CHRISTMAS TREE PAGE
-   ORIGINAL TREE STYLING
 ========================================== */
 
 #treePage {
-
     background: #080d12;
-
 }
 
 #scene {
-
     width: 100%;
-
     height: 100%;
-
 }
 
 #scene canvas {
-
     display: block;
-
 }
 
 .message {
 
     position: absolute;
-
     bottom: 9%;
-
     width: 100%;
-
     text-align: center;
 
     color: #f5d77b;
-
+    font-family: "Times New Roman", serif;
     font-size: clamp(24px, 5vw, 52px);
-
     letter-spacing: 7px;
 
-    text-shadow:
-        0 0 15px rgba(255, 200, 80, 0.7);
+    text-shadow: 0 0 15px rgba(255, 200, 80, 0.7);
 
     pointer-events: none;
-
 }
 
 .credit {
 
     position: absolute;
-
     bottom: 4%;
-
     width: 100%;
-
     text-align: center;
 
     color: #89939b;
-
+    font-family: "Times New Roman", serif;
     font-size: 12px;
-
     letter-spacing: 2px;
 
     pointer-events: none;
-
 }
 
 
@@ -477,15 +373,11 @@ button:hover {
 
     .gate-card,
     .game-card {
-
-        padding: 35px 22px;
-
+        padding: 25px 20px;
     }
 
     .message {
-
         letter-spacing: 3px;
-
     }
 
 }
