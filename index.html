@@ -1,60 +1,106 @@
 
-<!-- PAGE 1: PASSWORD -->
-<section id="passwordPage" class="page active">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="gate-card">
+    <title>A Christmas Surprise</title>
 
-        <h1>enter</h1>
+    <link rel="stylesheet" href="./style.css">
+</head>
 
-        <form id="passwordForm">
+<body>
 
-            <input
-                type="text"
-                id="passwordInput"
-                placeholder="Password"
-                autocomplete="off"
-                required
-            >
+    <!-- ====================================== -->
+    <!-- PAGE 1: PASSWORD                       -->
+    <!-- ====================================== -->
 
-            <button type="submit">
-                Enter
-            </button>
+    <section id="passwordPage" class="page">
 
-        </form>
+        <div class="gate-card">
 
-        <p id="passwordError" class="error"></p>
+            <h1>enter</h1>
 
-    </div>
+            <form id="passwordForm">
 
-</section>
+                <input
+                    type="text"
+                    id="passwordInput"
+                    placeholder="Password"
+                    autocomplete="off"
+                    required
+                >
 
+                <button type="submit">Enter</button>
 
-<!-- PAGE 2: CONNECTIONS GAME -->
-<section id="connectionsPage" class="page" hidden>
+            </form>
 
-    <div class="game-card">
-
-        <h1>Connections</h1>
-
-        <div class="puzzle-placeholder">
-
-            <div class="puzzle-grid">
-                <div>❄</div>
-                <div>❄</div>
-                <div>❄</div>
-                <div>❄</div>
-            </div>
-
-            <p>YOUR CONNECTIONS PUZZLE</p>
-
-            <span>Coming soon...</span>
+            <p id="passwordError" class="error"></p>
 
         </div>
 
-        <button id="previewTreeButton">
-            Continue →
-        </button>
+    </section>
 
-    </div>
 
-</section>
+    <!-- ====================================== -->
+    <!-- PAGE 2: CONNECTIONS GAME               -->
+    <!-- ====================================== -->
+
+    <section id="connectionsPage" class="page" hidden>
+
+        <div class="game-card">
+
+            <h1>Connections</h1>
+
+            <div class="puzzle-placeholder">
+
+                <div class="puzzle-grid">
+                    <div>❄</div>
+                    <div>❄</div>
+                    <div>❄</div>
+                    <div>❄</div>
+                </div>
+
+                <p>YOUR CONNECTIONS PUZZLE</p>
+
+                <span>Coming soon...</span>
+
+            </div>
+
+            <button id="previewTreeButton">
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- PAGE 3: CHRISTMAS TREE                 -->
+    <!-- ====================================== -->
+
+    <section id="treePage" class="page" hidden>
+
+        <div id="scene"></div>
+
+        <div class="message">
+            Merry Christmas
+        </div>
+
+        <div class="credit">
+            Made with love
+        </div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- PAGE CONTROL SCRIPT                    -->
+    <!-- ====================================== -->
+
+    <script type="module" src="./gate.js"></script>
+
+</body>
+</html>
