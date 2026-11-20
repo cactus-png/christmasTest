@@ -50,6 +50,12 @@ const deselectButton = document.getElementById("deselectButton");
 const restartButton = document.getElementById("restartButton");
 const previewTreeButton = document.getElementById("previewTreeButton");
 
+const congratulationsPopup =
+    document.getElementById("congratulationsPopup");
+
+const closePopupButton =
+    document.getElementById("closePopupButton");
+
 
 // ==========================================
 // GAME VARIABLES
@@ -215,6 +221,7 @@ function submitGuess() {
         renderSolvedGroups();
         renderPuzzle();
 
+
         // Check if every category has been solved
 
         if (solvedCategories.length === categories.length) {
@@ -229,6 +236,10 @@ function submitGuess() {
             shuffleButton.disabled = true;
             deselectButton.disabled = true;
             submitGuessButton.disabled = true;
+
+            // Show congratulations popup
+
+            congratulationsPopup.hidden = false;
 
         }
 
@@ -247,6 +258,9 @@ function submitGuess() {
             "Not quite! Try another combination.";
 
         gameMessage.style.color = "#d98b82";
+
+
+        // Check if the player has run out of mistakes
 
         if (mistakes <= 0) {
 
@@ -347,6 +361,17 @@ submitGuessButton.addEventListener("click", submitGuess);
 
 
 // ==========================================
+// CONGRATULATIONS POPUP
+// ==========================================
+
+closePopupButton.addEventListener("click", function() {
+
+    congratulationsPopup.hidden = true;
+
+});
+
+
+// ==========================================
 // RESTART BUTTON
 // ==========================================
 
@@ -371,6 +396,8 @@ restartButton.addEventListener("click", function() {
     gameMessage.style.color = "";
 
     restartButton.hidden = true;
+
+    congratulationsPopup.hidden = true;
 
     previewTreeButton.disabled = true;
 
