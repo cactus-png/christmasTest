@@ -4,22 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merry Christmas!</title>
+    <title>A Christmas Surprise</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div id="scene"></div>
+    <!-- PAGE 1: PASSWORD -->
+    <section id="passwordPage" class="page active">
 
-    <div class="message">
-        MERRY CHRISTMAS!
-    </div>
+        <div class="snowflake">❄</div>
 
-    <div class="credit">
-        A little Christmas magic
-    </div>
+        <div class="gate-card">
+            <div class="christmas-icon">🎄</div>
 
-    <script type="module" src="script.js"></script>
+            <p class="eyebrow">A LITTLE CHRISTMAS SURPRISE</p>
+
+            <h1>Something awaits...</h1>
+
+            <p class="description">
+                Before you can discover your gift,
+                you'll need to unlock the magic.
+            </p>
+
+            <form id="passwordForm">
+
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="Enter the secret password"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">
+                    Unlock Christmas ✨
+                </button>
+
+            </form>
+
+            <p id="passwordError" class="error"></p>
+
+            <p class="bottom-text">
+                A little mystery makes Christmas sweeter.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 2: CONNECTIONS GAME -->
+    <section id="connectionsPage" class="page" hidden>
+
+        <div class="game-card">
+
+            <div class="christmas-icon">🎁</div>
+
+            <p class="eyebrow">STAGE TWO</p>
+
+            <h1>A little puzzle awaits...</h1>
+
+            <p class="description">
+                You've made it this far, but there's
+                one more challenge before your gift.
+            </p>
+
+            <div class="puzzle-placeholder">
+                <div class="puzzle-grid">
+                    <div>❄</div>
+                    <div>🎄</div>
+                    <div>⭐</div>
+                    <div>🎁</div>
+                </div>
+
+                <p>YOUR CONNECTIONS PUZZLE</p>
+
+                <span>Coming soon...</span>
+            </div>
+
+            <!-- Temporary button until the game is built -->
+            <button id="previewTreeButton">
+                Preview Your Christmas Gift →
+            </button>
+
+            <p class="bottom-text">
+                The final surprise is just ahead.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 3: CHRISTMAS TREE -->
+    <section id="treePage" class="page" hidden>
+
+        <div id="scene"></div>
+
+        <div class="message">
+            MERRY CHRISTMAS!
+        </div>
+
+        <div class="credit">
+            A little Christmas magic
+        </div>
+
+    </section>
+
+
+    <script type="module" src="gate.js"></script>
 
 </body>
 </html>
