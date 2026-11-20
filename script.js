@@ -219,15 +219,11 @@ function buildTree() {
     // ORNAMENTS
     // ======================================
 
-    const ornamentColors = [
-        0xc92828,
-        0xf1c40f,
-        0x3498db,
-        0xe056fd,
-        0xffffff,
-        0x00d2d3,
-        0xff7f50
-    ];
+const ORNAMENT_COLORS = [
+    "#8B0000", "#B22222", "#DC143C", "#FF0000",
+    "#806000", "#A67C00", "#B8860B", "#D4AF37", "#FFD700",
+    "#004B23", "#006400", "#008000", "#228B22", "#50C878"
+];
 
     const ornamentGeometry = new THREE.SphereGeometry(
         0.075,
