@@ -219,7 +219,7 @@ function buildTree() {
     // ORNAMENTS
     // ======================================
 
-const ORNAMENT_COLORS = [
+const ornamentColors = [
     0x8b0000, 
     0xb22222, 
     0xdc143c, 
