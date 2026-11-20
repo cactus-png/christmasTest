@@ -3,8 +3,9 @@
 // PASSWORD SETTINGS
 // ==========================================
 
-// Change the password here:
+// Change your password here:
 const PASSWORD = "Christmas2026";
+
 
 // ==========================================
 // PAGE ELEMENTS
@@ -22,26 +23,35 @@ const previewTreeButton = document.getElementById("previewTreeButton");
 
 let treeLoaded = false;
 
+
 // ==========================================
 // PASSWORD CHECK
 // ==========================================
 
 passwordForm.addEventListener("submit", function(event) {
+
     event.preventDefault();
 
     const enteredPassword = passwordInput.value.trim();
 
     if (enteredPassword === PASSWORD) {
+
         passwordError.textContent = "";
 
         passwordPage.hidden = true;
         connectionsPage.hidden = false;
+
     } else {
+
         passwordError.textContent = "Incorrect password. Try again.";
+
         passwordInput.value = "";
         passwordInput.focus();
+
     }
+
 });
+
 
 // ==========================================
 // LOAD CHRISTMAS TREE
@@ -49,18 +59,29 @@ passwordForm.addEventListener("submit", function(event) {
 
 previewTreeButton.addEventListener("click", async function() {
 
+    if (previewTreeButton.disabled) return;
+
     try {
+
         if (!treeLoaded) {
+
             await import("./script.js");
+
             treeLoaded = true;
+
         }
 
         connectionsPage.hidden = true;
         treePage.hidden = false;
 
     } catch (error) {
+
         console.error("Could not load the Christmas tree:", error);
-        alert("There was a problem loading the Christmas tree. Check the browser console for details.");
+
+        alert(
+            "There was a problem loading the Christmas tree. Check the browser console for details."
+        );
+
     }
 
 });
