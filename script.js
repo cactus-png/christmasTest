@@ -8,8 +8,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.m
 const SETTINGS = {
     STYLE: "hybrid",
 
-    CHARACTER_DENSITY: 0.75,
-    BRIGHTNESS: 0.70,
+    CHARACTER_DENSITY: 0.9,
+    BRIGHTNESS: 1.0,
 
     SPIN_SPEED: 0.35,
 
@@ -25,8 +25,8 @@ const SETTINGS = {
     FONT_SIZE: 12
 };
 
-// ASCII shading gradient
-const SHADE = ".,:;=+*#%@";
+// ASCII shading gradient ".,:;=+*#%@"
+const SHADE = ",;=+#%@";
 
 // ==========================================
 // SCENE SETUP
@@ -90,7 +90,7 @@ let cellHeight = 13;
 // ==========================================
 
 const ambientLight = new THREE.AmbientLight(
-    0xffffff, 0.7
+    0xfff9d8, 0.7
 );
 
 scene.add(ambientLight);
