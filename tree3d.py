@@ -41,7 +41,7 @@ def build_scene():
     rnd = random.Random(7)
     scene = {"foliage": [], "garland": [], "ornaments": [], "trunk": [], "floor": []}
 
-    rings = 80
+    rings = 160
     for i in range(rings):
         y = i / rings
         r = radius_at(y)
