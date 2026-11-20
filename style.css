@@ -8,12 +8,18 @@
 body {
     overflow: hidden;
     background: #080d12;
-    font-family: Times New Roman, serif;
+    font-family: Georgia, serif;
 }
 
 #scene {
     width: 100vw;
     height: 100vh;
+}
+
+#scene canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .message {
