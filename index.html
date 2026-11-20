@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,22 +54,43 @@
 
             <h1>Connections</h1>
 
-            <div class="puzzle-placeholder">
+            <p class="game-instructions">
+                Group the 16 words into four categories of four.
+            </p>
 
-                <div class="puzzle-grid">
-                    <div>❄</div>
-                    <div>❄</div>
-                    <div>❄</div>
-                    <div>❄</div>
-                </div>
+            <div id="solvedGroups" class="solved-groups"></div>
 
-                <p>YOUR CONNECTIONS PUZZLE</p>
+            <div id="puzzleGrid" class="connections-grid"></div>
 
-                <span>Coming soon...</span>
+            <p id="gameMessage" class="game-message">
+                Select four words that belong together.
+            </p>
+
+            <p id="mistakesRemaining" class="mistakes">
+                Mistakes remaining: 4
+            </p>
+
+            <div class="game-controls">
+
+                <button id="shuffleButton" type="button">
+                    Shuffle
+                </button>
+
+                <button id="deselectButton" type="button">
+                    Deselect
+                </button>
+
+                <button id="submitGuessButton" type="button" disabled>
+                    Submit
+                </button>
 
             </div>
 
-            <button id="previewTreeButton">
+            <button id="restartButton" type="button" hidden>
+                Restart Puzzle
+            </button>
+
+            <button id="previewTreeButton" type="button" disabled>
                 Continue →
             </button>
 
@@ -97,10 +119,12 @@
 
 
     <!-- ====================================== -->
-    <!-- PAGE CONTROL SCRIPT                    -->
+    <!-- JAVASCRIPT FILES                       -->
     <!-- ====================================== -->
 
+    <script type="module" src="./connections.js"></script>
     <script type="module" src="./gate.js"></script>
 
 </body>
+
 </html>
