@@ -5,14 +5,14 @@ import shutil
 import sys
 import time
 
-FPS = 24
+FPS = 35
 SPIN_SPEED = 0.8
 TILT = 0.28
 CAM_DIST = 4.0
 TREE_R = 0.42
 TIERS = 5
-NUM_ORNAMENTS = 45
-GARLAND_TURNS = 4.5
+NUM_ORNAMENTS = 35
+GARLAND_TURNS = 10.5
 MESSAGE = "MERRY CHRISTMAS!"
 
 GREENS = [22, 22, 28, 28, 34, 34, 40, 46, 82, 118]
@@ -200,7 +200,7 @@ def render(scene, t, cols, rows, snow):
         if start + i < cols:
             chars[mrow][start + i] = ch
             colors[mrow][start + i] = TEXT_COLORS[(i + shift) % len(TEXT_COLORS)]
-    hint = "@alishsharma on tiktok"
+    hint = ""
     hstart = max(0, (cols - len(hint)) // 2)
     for i, ch in enumerate(hint):
         if hstart + i < cols:
