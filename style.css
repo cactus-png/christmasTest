@@ -1,3 +1,4 @@
+
 /* ========================================== */
 /* GENERAL                                    */
 /* ========================================== */
@@ -78,7 +79,6 @@ body {
 }
 
 @keyframes snowfall {
-
     from {
         transform: translateY(0);
     }
@@ -86,7 +86,6 @@ body {
     to {
         transform: translateY(300px);
     }
-
 }
 
 
@@ -373,7 +372,6 @@ button:disabled {
 }
 
 @keyframes popupAppear {
-
     from {
         opacity: 0;
         transform: translateY(15px);
@@ -383,7 +381,6 @@ button:disabled {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
 
