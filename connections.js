@@ -1,21 +1,16 @@
 
-// ==========================================
-// CONNECTIONS PUZZLE CONTENT
-// EDIT YOUR CATEGORIES AND WORDS HERE
-// ==========================================
-
 const categories = [
 
     {
-        name: "Birds",
+        name: "Minecraft World Pets",
         color: "#f2c94c",
-        words: ["Robin", "Sparrow", "Eagle", "Penguin"]
+        words: ["Lil' Fella", "Murr", "Rita", "Jeff Lewis"]
     },
 
     {
         name: "Colors",
         color: "#78a9d1",
-        words: ["Red", "Blue", "Green", "Yellow"]
+        words: ["Seagull 429", "Jengbluno", "Green", "Yellow"]
     },
 
     {
