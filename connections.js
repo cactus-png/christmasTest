@@ -2,27 +2,27 @@
 const categories = [
 
     {
-        name: "Minecraft World Pets",
+        name: "Fatazz World Pets",
         color: "#f2c94c",
         words: ["Lil' Fella", "Murr", "Rita", "Jeff Lewis"]
     },
 
     {
-        name: "Colors",
+        name: "Locations of firsts",
         color: "#78a9d1",
-        words: ["Seagull 429", "Jengbluno", "Green", "Yellow"]
+        words: ["Loaf", "Street Lamp", "Astronomy", "Lake"]
     },
 
     {
-        name: "Shapes",
+        name: "Movies we've seen but one word",
         color: "#b49bd6",
-        words: ["Circle", "Square", "Triangle", "Rectangle"]
+        words: ["Walk", "Everything", "Supreme", "Man"]
     },
 
     {
-        name: "Seasons",
+        name: "Things we've crafted",
         color: "#82b58b",
-        words: ["Spring", "Summer", "Autumn", "Winter"]
+        words: ["Mugs", "Pots", "Mine", "Canvas"]
     }
 
 ];
